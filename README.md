@@ -11,9 +11,9 @@ From-scratch rasteriser in **plain JavaScript on Node** (no framework, no `<canv
 
 | Item | Value |
 |---|---|
-| OS | Windows 11 |
+| OS | Microsoft Windows 11 Pro |
 | Node | v24.14.1 |
-| Browser | Google Chrome 141.0.7390.123 |
+| Browser | Chrome 156.0.8078.48 |
 | Three.js | 0.160.0 |
 | Date | 2026-10-29 |
 ## Input plan (Lab 1, step 2)
@@ -65,7 +65,7 @@ plus the plan JSON. URL: `https://<user>.github.io/<repo>/` (fill in after the f
 | Clean copy -> `npm install` -> `npm test` (via `tools/verify_clean_clone.mjs`) | **green** (transcript in LAPORAN A6); literal `git clone` run still to be done by you after push | 2026-10-29 | Node v22.23.4, npm 10 |
 | `web/` viewer in a real browser | **yes** headless Chromium 141: plan + 5-category legend render, deuteranopia/protanopia/grayscale toggles keep the 5 categories distinct (screenshots in `report/`) | 2026-10-29 | Chromium 141, Three.js 0.160.0 |
 | `plan_three.png` vs `out/plan_scratch.ppm` (myplan.json) | 479 952 / 480 000 identical, PSNR 56.7 dB (fill) | 2026-10-29 | Chromium 141, Three.js 0.160.0 |
-| GitHub Pages URL | **not yet** -- needs your GitHub account (push + enable Pages -> "GitHub Actions") | -- | -- |
+| GitHub Pages URL | **live**: https://yasminsyamlan.github.io/modul2-grafika-komputer/ | 2026-10-29 | GitHub Actions |
 
 ## Alat bantu untuk menyelesaikan bagian yang butuh data Anda sendiri
 

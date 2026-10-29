@@ -6,15 +6,15 @@ Repo: kode + tes + bukti ada di folder ini; semua angka di bawah berasal dari pe
 > **Catatan jujur sebelum membaca.**
 > 1. Input denah adalah **`myplan.json`**: denah skematis **Candi Siwa (Prambanan)**, subjek yang sama dengan foto Modul 1. Ukuran alas 34 m persegi adalah angka yang dipublikasikan; offset platform dalam, lebar tangga, dan ukuran bilik adalah **perkiraan proporsional, bukan hasil survei**. Itu dinyatakan juga di kolom `note` pada JSON-nya. `pusaka_plan.json` tetap disimpan hanya sebagai cadangan.
 > 2. Toolchain di bawah dicatat dari mesin tempat bukti dibuat (container Linux). Ganti dengan mesin Anda sendiri sebelum dikumpulkan.
-> 3. URL GitHub Pages **belum ada** (butuh akun GitHub Anda). Workflow sudah disiapkan (`.github/workflows/pages.yml`).
+> 3. URL GitHub Pages: https://yasminsyamlan.github.io/modul2-grafika-komputer/
 
 ## 0. Toolchain (Lab 1.1)
 
 | Item | Nilai |
 |---|---|
-| OS | Windows 11 |
+| OS | Microsoft Windows 11 Pro |
 | Node | v24.14.1 |
-| Browser | Google Chrome 141.0.7390.123 |
+| Browser | Chrome 156.0.8078.48 |
 | Three.js | 0.160.0 |
 | Tanggal | 2026-10-29 |
 ---
@@ -171,7 +171,7 @@ $ node compare.mjs out/p.ppm plan_three.png
 same size 800x600   identical pixels: 479952/480000   PSNR: 56.7 dB   SSIM: 1.000   max |diff|: 110
 ```
 
-URL GitHub Pages: **belum tersedia** (isi setelah push + Settings → Pages → "GitHub Actions").
+URL GitHub Pages: https://yasminsyamlan.github.io/modul2-grafika-komputer/
 
 **Refleksi (Lab 3.7).** Yang diambil alih pustaka: tahap 3–7 (assembly, clipping, rasterisasi, anti-alias, framebuffer). Yang tetap harus saya kerjakan dengan benar: **winding** (mesh `ShapeGeometry` di kamera y-bawah ter-mirror → saya memakai `DoubleSide`), **ukuran/pixel ratio** (DPR 2 menggandakan canvas → `setPixelRatio(1)`), **posisi sub-pixel** (garis harus di pusat pixel, +0,5), dan **ruang warna** (warna latar/garis harus identik di dua renderer; Three.js mengonversi sRGB↔linear, selisihnya masuk pada ujung garis). Jika denah punya 10 000 segmen alih-alih 50: yang pertama rusak di Three.js adalah **jumlah draw call** (satu `Line` per polyline = ribuan draw call di CPU; perbaikan: gabung ke satu `LineSegments`/`BufferGeometry`); di sisi from-scratch, `bench.mjs` backward menjadi tak layak.
 
