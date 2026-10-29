@@ -1,0 +1,2 @@
+same size 800x600   identical pixels: 479952/480000   PSNR: 58.5 dB   SSIM: 1.000   max |diff|: 110
+wrote report/diff_plan_outline.png (|A-B| x6)

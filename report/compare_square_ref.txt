@@ -1,0 +1,1 @@
+same size 12x12   identical pixels: 144/144   PSNR: inf dB   SSIM: 1.000   max |diff|: 0

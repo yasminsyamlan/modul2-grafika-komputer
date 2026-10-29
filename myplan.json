@@ -1,0 +1,41 @@
+{
+  "name": "Candi Siwa, Prambanan -- schematic floor plan (Module 2 input; subject follows Module 1 photo set)",
+  "units": "metres",
+  "note": "y is UP (north); x is EAST. Schematic plan of the main Shiva temple, entrance facing east. Base 34 m square is the published figure; inner offsets, stair widths and chamber sizes are proportional estimates, NOT a survey. Replace with a measured plan if one is required.",
+  "scale_px_per_m": 16.5,
+  "origin_m": [1.0, 1.0],
+  "polylines": [
+    { "id": "outer_wall", "category": "wall", "closed": true,
+      "points": [[0,0],[34,0],[34,34],[0,34]] },
+    { "id": "inner_platform", "category": "wall", "closed": true,
+      "points": [[5,5],[29,5],[29,29],[5,29]] },
+    { "id": "temple_body", "category": "wall", "closed": true,
+      "points": [[9,9],[25,9],[25,25],[9,25]] },
+    { "id": "cella", "category": "cella", "closed": true,
+      "points": [[14,14],[20,14],[20,20],[14,20]] },
+    { "id": "entrance_stair", "category": "stair", "closed": true,
+      "points": [[29,14],[34,14],[34,20],[29,20]] },
+    { "id": "stair_treads_1", "category": "stair", "closed": false, "points": [[30,14],[30,20]] },
+    { "id": "stair_treads_2", "category": "stair", "closed": false, "points": [[31,14],[31,20]] },
+    { "id": "stair_treads_3", "category": "stair", "closed": false, "points": [[32,14],[32,20]] },
+    { "id": "stair_treads_4", "category": "stair", "closed": false, "points": [[33,14],[33,20]] },
+    { "id": "stair_north", "category": "stair", "closed": true,
+      "points": [[14,29],[20,29],[20,34],[14,34]] },
+    { "id": "stair_south", "category": "stair", "closed": true,
+      "points": [[14,0],[20,0],[20,5],[14,5]] },
+    { "id": "stair_west", "category": "stair", "closed": true,
+      "points": [[0,14],[5,14],[5,20],[0,20]] },
+    { "id": "shrine_durga_north", "category": "shrine", "closed": true,
+      "points": [[15,25],[19,25],[19,28],[15,28]] },
+    { "id": "shrine_agastya_south", "category": "shrine", "closed": true,
+      "points": [[15,6],[19,6],[19,9],[15,9]] },
+    { "id": "shrine_ganesha_west", "category": "shrine", "closed": true,
+      "points": [[6,15],[9,15],[9,19],[6,19]] },
+    { "id": "axis_ns", "category": "axis", "closed": false, "points": [[17,0],[17,34]] },
+    { "id": "axis_ew", "category": "axis", "closed": false, "points": [[0,17],[34,17]] }
+  ],
+  "silhouette": {
+    "id": "footprint", "category": "wall",
+    "points": [[0,0],[34,0],[34,34],[0,34]]
+  }
+}

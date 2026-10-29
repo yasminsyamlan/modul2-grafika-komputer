@@ -1,0 +1,2 @@
+same size 800x600   identical pixels: 464261/480000   PSNR: 29.1 dB   SSIM: 0.738   max |diff|: 227
+wrote report/diff_plan_half0.png (|A-B| x6)
