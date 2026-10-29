@@ -153,22 +153,48 @@ Semua pasangan > 5 (≈2 JND), jadi kelima kategori tetap berbeda. Pada deuteran
 
 ## A6. Reproducibility & viva
 
-**Transkrip clone bersih** (salinan bersih berkas repo + `npm install` + `npm test`, dijalankan 2026-10-29 di container penulisan; **ganti dengan transkrip `git clone` dari mesin Anda setelah push**, lihat `SELESAIKAN.md` langkah 5):
+**Transkrip clone bersih** (git clone dari GitHub, dijalankan 2026-10-29 di Windows 11 Pro, Node v24.14.1):
 
 ```
-$ git clone <repo> clean && cd clean
-$ npm install
-added 86 packages
-$ npm test
-...
+$ git clone https://github.com/yasminsyamlan/modul2-grafika-komputer.git clean
+
+added 86 packages, and audited 87 packages in 8s
+
+26 packages are looking for funding
+  run `npm fund` for details
+
+2 high severity vulnerabilities
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+> grk-module2@1.0.0 test
+> node tests.mjs
+
+OK   E2 -- lineDDA (2,1)->(9,5) gives the 8-pixel staircase
+OK   E3 -- lineBresenham (2,1)->(9,5) matches DDA, integers only
+OK   lines -- all 8 octants: the reflected segment has the same length
+OK   E4 -- edge-function signs for A(1,1) B(6,2) C(3,7)
+OK   E5 -- barycentric interpolation 10/20/40 at (.5,.25,.25) = 20
+OK   top-left rule -- 6x6 square split on y=x: every pixel covered once
+OK   no top-left rule -- same square shows the seam (>=0: doubles; >0: gaps)
+OK   E1 -- sample-centre: a 2x2 rect at (1,1) lights exactly (1,1),(2,1),(1,2),(2,2)
+OK   plan -- worldToScreen flips y once and is invertible on a known point
+OK   reference raster -- draw_square fill is byte-identical to ref/square_fill_ref.ppm
 OK   tri_ref -- triangle(A(1,1),B(6,2),C(3,7)) is byte-identical to the independent Python reference
 OK   triangle -- 3000 random triangles agree with the exact oracle (both rules, incl. on-edge pixels)
 OK   watertight -- 1500 random convex quads (any slope, both rules): every interior pixel exactly once
-...
+OK   winding -- reversed triangle is still filled with autoFlip, vanishes without
+OK   octants -- 24-spoke asterisk: every spoke length within +-1 px of R, DDA and Bresenham agree
+OK   lineBresenham -- exact endpoints, 8-connected, no repeats, for 5000 random segments
+OK   Wu line -- linear-light blend conserves light; naive sRGB blend loses it
+OK   sample-centre -- corner sampling over-fills a 2x2 rectangle to 3x3
+OK   PNG codec -- encode -> decode round-trips a framebuffer and rejects garbage
+OK   plan -- the active plan file passes schema validation (and lists Lab 1 minimum content)
+
 ALL CHECKS PASSED  (20 ok, 0 fail)
-$ node tools/capture_three.mjs      # halaman dimuat di Chromium 141, 800x600 DPR=2 -> plan_three.png
-$ node compare.mjs out/p.ppm plan_three.png
-same size 800x600   identical pixels: 479952/480000   PSNR: 56.7 dB   SSIM: 1.000   max |diff|: 110
 ```
 
 URL GitHub Pages: https://yasminsyamlan.github.io/modul2-grafika-komputer/
